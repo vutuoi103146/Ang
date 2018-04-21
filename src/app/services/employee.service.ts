@@ -1,17 +1,18 @@
 import {Injectable} from '@angular/core'
+import {Http, Response} from '@angular/http'
+import {Observable} from 'rxjs/Observable'
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export  class EmployeeService
 {
-    public GetList():any[]
+    private urlApi: string ="http://5adadf6fba92a2001425c9a2.mockapi.io/api/employees";
+    constructor (private _http : Http)
     {
-        let  employees:any[] = [
-            {id:1, Name:"Lê Anh Vũ"},
-            {id:2, Name:"Lê Anh Sơn"},
-            {id:3, Name:"Lê Thị Ánh Tuyết"},
-            {id:4, Name:"Lê Hồng Phong"},
-            {id:4, Name:"Lê Thị Tâm"}
-        ];
-        return employees; 
+
+    }
+    public GetList():Observable< any[]>
+    {
+      return this._http.get(this.urlApi).map((response:Response)=> response.json());
     }
 }

@@ -1,4 +1,23 @@
 <h1>Employee List </h1>
+<table class ="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Status</td>
+            <td>Created At</td>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor ="let emp of employees" >
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.age}}</td>
+                    <td>{{emp.status}}</td>
+                    <td>{{emp.createdAt | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+                </tr>
+    </tbody>
+</table>
+
 <ul>
-    <li *ngFor ="let emp of employees"> {{emp.Name}}</li>   
+    <li *ngFor ="let emp of employees"> {{emp.name}}</li>   
 </ul>
