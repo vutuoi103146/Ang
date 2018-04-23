@@ -25,5 +25,4 @@ export class EmployeeProjectsComponent implements OnInit, OnDestroy{
     {
         this.sub.unsubscribe();
     }
-
 }
