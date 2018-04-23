@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export  class EmployeeService
 {
-    private urlApi: string ="http://5adadf6fba92a2001425c9a2.mockapi.io/api/employees";
+    private urlApi: string ="http://5adadf6fba92a2001425c9a2.mockapi.io/api/employees/";
     constructor (private _http : Http)
     {
 
@@ -15,4 +15,7 @@ export  class EmployeeService
     {
       return this._http.get(this.urlApi).map((response:Response)=> response.json());
     }
+    GetSingle(id: number): Observable<any> {
+      return this._http.get(this.urlApi + id).map((response: Response) => response.json())
+  }
 }

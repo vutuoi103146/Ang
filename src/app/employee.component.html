@@ -14,6 +14,9 @@
                     <td>{{emp.age}}</td>
                     <td>{{emp.status}}</td>
                     <td>{{emp.createdAt | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+                    <td>
+                        <a [routerLink]="['/employee-detail',emp.id]">Show detail</a>
+                    </td>
                 </tr>
     </tbody>
 </table>
