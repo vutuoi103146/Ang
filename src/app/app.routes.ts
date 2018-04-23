@@ -7,3 +7,5 @@ const routing: Routes =[
     {path: '',component: HomeComponent},
     {path: 'employees', component: EmployeeListComponent }
 ]
+
+export const appRoutes = RouterModule.forRoot(routing);

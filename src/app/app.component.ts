@@ -7,13 +7,5 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent 
 {
-    public cities = 
-    [
-      {id :1, Name :"Hà Nội"},
-      {id :2, Name :"HCM"}
-    ]
-    onSubmit(value:any)
-    {
-      console.log(value);
-    }
+   
 }
