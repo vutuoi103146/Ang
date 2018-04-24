@@ -11,18 +11,26 @@ import { NotFoundComponent } from './notFound.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverviewComponent } from './employee-overview.component';
 import { EmployeeProjectsComponent } from './employee-projects.component';
+import { LoginComponent } from './login.component';
+import { LoginService } from './services/login.service';
+import { CheckloginGuard } from './guards/check-login.guard';
 
 
 @NgModule({
   declarations: [
-    AppComponent,EmployeeListComponent,
-    HomeComponent,NotFoundComponent, 
-    EmployeeDetailComponent, EmployeeOverviewComponent,EmployeeProjectsComponent
+    AppComponent,
+    EmployeeListComponent,
+    HomeComponent,
+    NotFoundComponent, 
+    EmployeeDetailComponent, 
+    EmployeeOverviewComponent,
+    EmployeeProjectsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpModule,appRoutes
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, LoginService, CheckloginGuard],
   bootstrap: [AppComponent]
 })
 
