@@ -6,13 +6,17 @@ import { NotFoundComponent } from './notFound.component';
 import { EmployeeDetailComponent } from './employee-detail.component';
 import { EmployeeOverviewComponent } from './employee-overview.component';
 import { EmployeeProjectsComponent } from './employee-projects.component';
+import { LoginComponent } from './login.component';
+import { CheckloginGuard } from './guards/check-login.guard';
+import { CheckSaveGuard } from './guards/check-save-form.guard';
 
 const routing: Routes = [
     { path: '', component: HomeComponent },
     // {path: '',redirectTo: 'employees', pathMatch:'full'}, //Chuyển trang khi vào Home
-    { path: 'employees', component: EmployeeListComponent },
+    { path: 'employees', component: EmployeeListComponent, canActivate: [CheckloginGuard] },
+    { path: 'login', component: LoginComponent },
     {
-        path: 'employee-detail/:id', component: EmployeeDetailComponent, children:
+        path: 'employee-detail/:id', component: EmployeeDetailComponent,canDeactivate: [CheckSaveGuard], children:
             [
                 { path: '', redirectTo: 'overview', pathMatch: 'full' },
                 { path: 'overview', component: EmployeeOverviewComponent },

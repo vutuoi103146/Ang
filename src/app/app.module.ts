@@ -14,6 +14,7 @@ import { EmployeeProjectsComponent } from './employee-projects.component';
 import { LoginComponent } from './login.component';
 import { LoginService } from './services/login.service';
 import { CheckloginGuard } from './guards/check-login.guard';
+import { CheckSaveGuard } from './guards/check-save-form.guard';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { CheckloginGuard } from './guards/check-login.guard';
   imports: [
     BrowserModule,FormsModule,HttpModule,appRoutes
   ],
-  providers: [EmployeeService, LoginService, CheckloginGuard],
+  providers: [EmployeeService, LoginService, CheckloginGuard, CheckSaveGuard],
   bootstrap: [AppComponent]
 })
 
