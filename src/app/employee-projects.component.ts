@@ -8,7 +8,7 @@ import {Subscription} from 'rxjs'
     templateUrl:'./employee-projects.component.html'
 })
 export class EmployeeProjectsComponent implements OnInit, OnDestroy{
-    private employeeid: number;
+    public employeeid: number;
     private sub: Subscription;
     constructor(private router: Router, private activatedRoute: ActivatedRoute)
     {
