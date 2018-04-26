@@ -18,6 +18,7 @@
                     <td>
                         <a [routerLink]="['/employee-detail',emp.id]">Show detail</a>
                         <a [routerLink]="['/employee-edit',emp.id]">Edit</a>
+                        <button (click) ="DeleteEmployee(emp.id)" class ="btn btn-danger" >Delete</button>
                     </td>
                 </tr>
     </tbody>
