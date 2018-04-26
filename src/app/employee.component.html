@@ -1,5 +1,12 @@
 <h1>Employee List </h1>
-<button (click) ="AddEmployee()">Add</button>
+<button class ="btn btn-primary"  (click) ="AddEmployee()">Add</button>
+<hr>
+<input type="text" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+<!-- <input type="text" [(ngModel)] ="seachString" /> -->
+<hr>
+<b>Seach For:  </b>
+
+<label>{{seachString}}</label>
 <table class ="table">
     <thead>
         <tr>
@@ -17,7 +24,8 @@
                     <td>{{emp.createdAt | date:'dd/MM/yyyy hh:mm:ss' }}</td>
                     <td>
                         <a [routerLink]="['/employee-detail',emp.id]">Show detail</a>
-                        <a [routerLink]="['/employee-edit',emp.id]">Edit</a>
+                        <!-- <a [routerLink]="['/employee-edit',emp.id]">Edit</a> -->
+                        <button (click) ="EditEmployee(emp.id)" class ="btn btn-primary" >Edit</button>
                         <button (click) ="DeleteEmployee(emp.id)" class ="btn btn-danger" >Delete</button>
                     </td>
                 </tr>

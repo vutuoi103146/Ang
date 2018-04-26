@@ -13,10 +13,15 @@ export class EmployeeListComponent implements OnInit {
     public pages: number[];
     public employees: any[];
     private activePage: number;
+    public seachString: string
     constructor(private employeeService: EmployeeService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     }
+    search(value: string)
+    {
+        this.seachString = value;
 
+    }
     AddEmployee() {
         this.router.navigate(['employee-add']);
     }
@@ -35,6 +40,9 @@ export class EmployeeListComponent implements OnInit {
                 this.loadData();
             }
         })
+    }
+    EditEmployee(id: number) {
+        this.router.navigate(['employee-edit',id]);
     }
     private loadData() {
         this.employeeService.GetList().subscribe((response: any) => {
