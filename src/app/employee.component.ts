@@ -18,12 +18,17 @@ export class EmployeeListComponent implements OnInit
     {
        
     }
+
+    AddEmployee()
+    {
+        this.router.navigate(['employee-add']);
+    }
     ngOnInit()
     {
         this.pages = [1,2,3,4,5];
         this.activatedRoute.queryParams.subscribe(params =>{
                 this.activePage = params['numberPage'] || 1;
-                alert(this.activePage);
+               // alert(this.activePage);
         })
         this.employeeService.GetList().subscribe((response:any)=> {
             this.employees =  response;
@@ -31,7 +36,7 @@ export class EmployeeListComponent implements OnInit
             console.error("System error API: " + error)
         });
         
-        
+       
 
     }
 }

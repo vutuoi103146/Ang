@@ -8,7 +8,8 @@ export class CheckSaveGuard implements CanDeactivate<EmployeeDetailComponent>
 
     public canDeactivate(component: EmployeeDetailComponent)
     {
+        //
         alert("You don't save data!");
-        return false;
+        return true;
     }
 }

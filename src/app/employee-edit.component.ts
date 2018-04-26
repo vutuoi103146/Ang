@@ -36,10 +36,16 @@ export class EmployeeEditComponent implements OnInit, OnDestroy {
 
     saveForm()
     {
-
+        this.employeeService.Upadate(this._id,this.employee).subscribe(response =>{
+            if (response)
+            {
+                alert("Save success!");
+                this.router.navigate(['employees']);
+            }
+        })
     }
     cancelClick()
     {
-        this.router.navigate(['/employees'])
+        this.router.navigate(['employees']);
     }
 }

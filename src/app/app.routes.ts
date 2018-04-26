@@ -10,6 +10,7 @@ import { LoginComponent } from './login.component';
 import { CheckloginGuard } from './guards/check-login.guard';
 import { CheckSaveGuard } from './guards/check-save-form.guard';
 import { EmployeeEditComponent } from './employee-edit.component';
+import { EmployeeAddComponent } from './employee-add.component';
 
 const routing: Routes = [
     { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routing: Routes = [
     { path: 'employees', component: EmployeeListComponent, canActivate: [CheckloginGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'employee-edit/:id', component: EmployeeEditComponent },
+    { path: 'employee-add', component: EmployeeAddComponent },
     {
         path: 'employee-detail/:id', component: EmployeeDetailComponent,canDeactivate: [CheckSaveGuard], children:
             [
