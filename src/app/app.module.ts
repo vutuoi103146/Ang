@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee.component';
 import { EmployeeService } from './services/employee.service';
@@ -29,7 +29,7 @@ import { CheckSaveGuard } from './guards/check-save-form.guard';
     LoginComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpModule,appRoutes
+    BrowserModule,FormsModule,HttpModule,appRoutes,ReactiveFormsModule
   ],
   providers: [EmployeeService, LoginService, CheckloginGuard, CheckSaveGuard],
   bootstrap: [AppComponent]
