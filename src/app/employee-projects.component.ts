@@ -12,14 +12,13 @@ export class EmployeeProjectsComponent implements OnInit, OnDestroy{
     private sub: Subscription;
     constructor(private router: Router, private activatedRoute: ActivatedRoute)
     {
-
+        
     }
     ngOnInit()
     {
         this.sub = this.activatedRoute.parent.params.subscribe(data =>{
             this.employeeid = data['id'];
         })
-        //alert(this.employeeid);
     }
     ngOnDestroy()
     {
